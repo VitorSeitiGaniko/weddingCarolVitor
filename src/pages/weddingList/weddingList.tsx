@@ -2,10 +2,16 @@ import { ProductCard } from './components/productCard';
 import { listaPresentesCasamento } from '../../models/weddingList';
 import { useState } from 'react';
 
-import { Badge, Box, Button, Divider, Drawer, IconButton } from '@mui/material';
+import { Badge, IconButton } from '@mui/material';
+import { Header } from '../../components';
+import { Cart } from './components/cart';
+
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useStoreCart } from '../../store/useStoreCart';
 
 const WeddingList = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const { cart } = useStoreCart();
 
   return (
     <main className='flex flex-col'>
@@ -22,8 +28,12 @@ const WeddingList = () => {
         }}
         aria-label='Abrir carrinho'
       >
-        <Badge color='error'>iconCart</Badge>
+        <Badge badgeContent={cart.length} color='error'>
+          <ShoppingCartIcon style={{ color: '#3d4c2f' }} />
+        </Badge>
       </IconButton>
+
+      <Header />
 
       <section className='mb-14'>
         <div className='mx-auto flex items-center justify-center gap-3.5 text-muted'>
@@ -34,7 +44,7 @@ const WeddingList = () => {
           <span className='h-px w-14 bg-line' />
         </div>
 
-        <p className='mx-auto mt-7 max-w-[560px] text-pretty text-[17px] leading-relaxed text-body'>
+        <p className='mx-auto mt-7 max-w-[560px] text-center text-pretty text-[17px] leading-relaxed text-body'>
           Sua presenca ja e o nosso maior presente. Mas se quiser fazer parte do comeco da nossa nova vida
           juntos, escolha com carinho um mimo para o nosso lar.
         </p>
@@ -49,7 +59,6 @@ const WeddingList = () => {
         </p>
       </section>
 
-      {/* ---------- Grid: 1 / 2 / 3 / 4 colunas ---------- */}
       <section
         aria-label='Lista de presentes'
         className='grid grid-cols-1 gap-5 px-5 pb-14 pt-7 sm:grid-cols-2 sm:gap-5 sm:px-7 lg:grid-cols-3 lg:gap-6 lg:px-7 xl:grid-cols-4 xl:gap-7 xl:px-8 xl:pb-20'
@@ -59,51 +68,20 @@ const WeddingList = () => {
             product.available && (
               <ProductCard
                 key={product.id}
+                id={product.id}
                 image={product.image}
-                name={product.name}
+                title={product.title}
                 description={product.description}
-                price={product.price}
+                unit_price={product.unit_price}
+                quantity={1}
+                currency_id={'BRL'}
+                available={product.available}
               />
             ),
         )}
       </section>
 
-      <Drawer anchor='right' open={isCartOpen} onClose={() => setIsCartOpen(false)}>
-        <Box sx={{ width: { xs: 320, sm: 380 }, p: 3 }}>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              mb: 2,
-            }}
-          >
-            <h3 style={{ fontWeight: 600 }}>Carrinho</h3>
-
-            <IconButton onClick={() => setIsCartOpen(false)}>x</IconButton>
-          </Box>
-
-          <Divider sx={{ mb: 2 }} />
-
-          <>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <Box>
-                <h3 style={{ fontWeight: 600 }}>test</h3>
-                <h3 style={{ color: 'text.secondary' }}>Quantidade: 1</h3>
-                <h3>R$ 180,00</h3>
-              </Box>
-            </Box>
-
-            <Divider sx={{ my: 2 }} />
-
-            <h3 style={{ fontWeight: 700, marginBottom: '16px' }}>Total: R$ 180,00</h3>
-
-            <Button fullWidth variant='contained'>
-              Finalizar
-            </Button>
-          </>
-        </Box>
-      </Drawer>
+      <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
     </main>
   );
 };
