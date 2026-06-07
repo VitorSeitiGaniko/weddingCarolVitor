@@ -62,7 +62,7 @@ const Banner = () => {
         <div className='absolute inset-0 bg-white/30'></div>
       </div>
 
-      <div className='text-center z-10 animate-fade-in my-[230px]'>
+      <div className='text-center z-10 animate-fade-in my-[200px]'>
         <p className='mb-9 font-sans text-xs font-medium uppercase tracking-[4px] text-[#3d4c2f]'>
           Vamos nos casar
         </p>

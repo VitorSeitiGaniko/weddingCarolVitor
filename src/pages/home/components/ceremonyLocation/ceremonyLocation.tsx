@@ -2,12 +2,12 @@
    Edite aqui os dados do local da cerimônia.
    ---------------------------------------------------------------- */
 const LOCAL = {
-  nome: 'Espaço Villa Garden',
-  endereco: 'Rua das Acácias, 1234 — Jardim Botânico, São Paulo - SP',
-  horarioChegada: '15h30',
-  horarioCerimonia: '16h00',
+  nome: 'Recanto Real',
+  endereco: 'Via Berlim, 625 - Chácaras Novo Hamburgo, Campo Limpo Paulista - SP',
+  horarioChegada: '16h00',
+  horarioCerimonia: '16h30',
   // Endereço usado para abrir no Google Maps
-  mapaQuery: 'Espaço Villa Garden, Rua das Acácias 1234, São Paulo - SP',
+  mapaQuery: 'Recanto Real, Via Berlim, 625 - Chácaras Novo Hamburgo, Campo Limpo Paulista - SP',
 };
 
 const PinIcon = () => (
@@ -52,9 +52,7 @@ const CeremonyLocation = () => {
       aria-label='Local e horário da cerimônia'
       className='border-t border-line px-6 py-16 text-center sm:py-20'
     >
-      <p className='mb-4 font-sans text-xs font-medium uppercase tracking-[4px] text-accent'>
-        Cerimônia
-      </p>
+      <p className='mb-4 font-sans text-xs font-medium uppercase tracking-[4px] text-accent'>Cerimônia</p>
       <h2 className='font-heading font-medium tracking-tight text-ink text-[clamp(30px,5vw,46px)]'>
         Onde vamos celebrar
       </h2>
@@ -65,9 +63,7 @@ const CeremonyLocation = () => {
             <PinIcon />
           </span>
           <h3 className='font-heading text-[26px] leading-tight text-ink'>{LOCAL.nome}</h3>
-          <p className='max-w-[420px] text-pretty text-[15px] leading-relaxed text-body'>
-            {LOCAL.endereco}
-          </p>
+          <p className='max-w-[420px] text-pretty text-[15px] leading-relaxed text-body'>{LOCAL.endereco}</p>
         </div>
 
         <div className='mx-auto my-7 h-px w-20 bg-line' />
@@ -77,8 +73,7 @@ const CeremonyLocation = () => {
             <ClockIcon />
           </span>
           <p className='text-[15px] leading-relaxed text-body'>
-            Chegada dos convidados às{' '}
-            <span className='font-medium text-ink'>{LOCAL.horarioChegada}</span>
+            Chegada dos convidados às <span className='font-medium text-ink'>{LOCAL.horarioChegada}</span>
             <br />
             Cerimônia às <span className='font-medium text-ink'>{LOCAL.horarioCerimonia}</span>
           </p>
