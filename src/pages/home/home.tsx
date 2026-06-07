@@ -1,5 +1,4 @@
-import { BannerVideo } from '../../assets';
-import { Footer, Header } from '../../components';
+import { Footer } from '../../components';
 import { Banner, Timer, Story, Gift, CeremonyLocation } from './components';
 
 const Home = () => {

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
    Edite aqui a data e o horário do casamento.
    Formato: ano, mês (0 = janeiro), dia, hora, minuto
    ---------------------------------------------------------------- */
-const WEDDING_DATE = new Date(2027, 0, 23, 16, 0, 0); // 23/01/2027 às 16h (placeholder)
+const WEDDING_DATE = new Date(2027, 0, 23, 16, 0, 0);
 
 type TimeLeft = {
   dias: number;
