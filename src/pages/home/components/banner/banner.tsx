@@ -1,16 +1,12 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { BannerVideo, BannerMusic } from '../../../../assets';
 import { VolumeUp, VolumeOff } from '@mui/icons-material';
+import { useInviteStore } from '../../../../store/useInvite';
 
 const Banner = () => {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [showModal, setShowModal] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
+  const { audioRef, showInviteScreem } = useInviteStore();
 
-  const handleAllow = () => {
-    audioRef.current?.play().catch(() => {});
-    setShowModal(false);
-  };
+  const [isMuted, setIsMuted] = useState(false);
 
   const handleToggleMute = () => {
     if (audioRef.current) {
@@ -20,7 +16,9 @@ const Banner = () => {
   };
 
   return (
-    <section className='relative min-h-screen flex flex-col items-center justify-center py-8 px-6 overflow-hidden bg-background'>
+    <section
+      className={`relative min-h-screen flex flex-col items-center justify-center py-8 px-6 overflow-hidden bg-background transition-opacity duration-2300 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
+    >
       <button
         onClick={handleToggleMute}
         className='fixed bottom-6 right-6 z-50 bg-white/80 hover:bg-white rounded-full p-2 shadow-md cursor-pointer'
@@ -30,25 +28,6 @@ const Banner = () => {
 
       <div className='absolute inset-0 w-full h-full'>
         <audio ref={audioRef} src={BannerMusic} loop preload='auto' />
-
-        {showModal && (
-          <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/50'>
-            <div className='bg-white rounded-2xl p-8 text-center shadow-xl'>
-              <p className='text-lg font-heading mb-6'>Deseja ativar a música de fundo?</p>
-              <div className='flex gap-4 justify-center'>
-                <button
-                  className='cursor-pointer border px-4 py-2 rounded'
-                  onClick={() => setShowModal(false)}
-                >
-                  Não
-                </button>
-                <button className='cursor-pointer border px-4 py-2 rounded' onClick={handleAllow}>
-                  Sim
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
 
         <video
           src={BannerVideo}
@@ -62,7 +41,9 @@ const Banner = () => {
         <div className='absolute inset-0 bg-white/30'></div>
       </div>
 
-      <div className='text-center z-10 animate-fade-in my-[200px]'>
+      <div
+        className={`text-center z-10 my-[200px] transition-opacity duration-4500 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
+      >
         <p className='mb-9 font-sans text-xs font-medium uppercase tracking-[4px] text-[#3d4c2f]'>
           Vamos nos casar
         </p>

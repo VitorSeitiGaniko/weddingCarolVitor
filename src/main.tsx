@@ -6,7 +6,7 @@ import { Home, WeddingList } from './pages';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <>
-      <WeddingList />
+      <Home />
     </>
   </StrictMode>,
 );
