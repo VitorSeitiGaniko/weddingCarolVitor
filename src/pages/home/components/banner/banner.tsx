@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BannerVideo, BannerMusic } from '../../../../assets';
+import { RecantoReal, BannerMusic } from '../../../../assets';
 import { VolumeUp, VolumeOff } from '@mui/icons-material';
 import { useInviteStore } from '../../../../store/useInvite';
 
@@ -17,7 +17,7 @@ const Banner = () => {
 
   return (
     <section
-      className={`relative min-h-screen flex flex-col items-center justify-center py-8 px-6 overflow-hidden bg-background transition-opacity duration-2300 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
+      className={`relative min-h-screen flex flex-col items-center justify-center py-8 px-6 overflow-hidden bg-background transition-opacity duration-4000 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
     >
       <button
         onClick={handleToggleMute}
@@ -30,7 +30,7 @@ const Banner = () => {
         <audio ref={audioRef} src={BannerMusic} loop preload='auto' />
 
         <video
-          src={BannerVideo}
+          src={RecantoReal}
           autoPlay
           muted
           loop
@@ -38,26 +38,26 @@ const Banner = () => {
           preload='auto'
           className='absolute inset-0 w-full h-full object-cover'
         ></video>
-        <div className='absolute inset-0 bg-white/30'></div>
+        <div className='absolute inset-0 bg-white/40'></div>
       </div>
 
       <div
         className={`text-center z-10 my-[200px] transition-opacity duration-4500 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
       >
-        <p className='mb-9 font-sans text-xs font-medium uppercase tracking-[4px] text-[#3d4c2f]'>
+        <p className='mb-9 font-sans text-xs font-medium uppercase tracking-[4px] text-[#502b13]'>
           Vamos nos casar
         </p>
-        <h1 className='font-banner font-regular leading-none text-[#3d4c2f] text-[clamp(48px,9vw,92px)]'>
+        <h1 className='font-banner font-regular leading-none text-[#502b13] text-[clamp(48px,9vw,92px)]'>
           Carol
           <span className='ml-4 mr-9 inline-block font-normal italic text-[#C0714F]'>&amp;</span>
           Vitor
         </h1>
         <div className='flex items-center justify-center gap-4 md:my-8 my-[5px]'>
-          <span className='h-px w-12 md:w-20 bg-[#3d4c2f]'></span>
-          <span className='text-[#C0714F] text-lg drop-shadow-md'>✦</span>
-          <span className='h-px w-12 md:w-20 bg-[#3d4c2f]'></span>
+          <span className='h-px w-12 md:w-20 bg-[#ff8c5a]'></span>
+          <span className='text-[#ff8c5a] text-lg drop-shadow-md'>✦</span>
+          <span className='h-px w-12 md:w-20 bg-[#ff8c5a]'></span>
         </div>
-        <p className='mt-5 text-xs font-bold uppercase tracking-[4px] text-[#3d4c2f]'>
+        <p className='mt-5 text-xs font-bold uppercase tracking-[4px] text-[#502b13]'>
           23 de Janeiro de 2027
         </p>
       </div>

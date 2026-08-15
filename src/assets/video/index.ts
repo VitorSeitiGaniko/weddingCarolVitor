@@ -1,4 +1,6 @@
 import BannerVideo from './banner-video.mp4';
 import InviteVideo from './invite.mp4';
+import InviteVideoMobile from './invite_mobile.mp4';
+import RecantoReal from './recantoReal.mp4';
 
-export { BannerVideo, InviteVideo };
+export { BannerVideo, InviteVideo, InviteVideoMobile, RecantoReal };

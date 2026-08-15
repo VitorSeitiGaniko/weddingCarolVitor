@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { InviteVideo } from '../../../../assets';
+import { InviteVideoMobile } from '../../../../assets';
 import { useInviteStore } from '../../../../store/useInvite';
 
 const Invite = () => {
@@ -36,7 +36,7 @@ const Invite = () => {
     <div className='fixed inset-0 z-50 w-screen h-screen bg-black' onClick={handleStart}>
       <video
         ref={videoRef}
-        src={InviteVideo}
+        src={InviteVideoMobile}
         muted
         playsInline
         preload='auto'
