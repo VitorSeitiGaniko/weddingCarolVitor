@@ -38,16 +38,16 @@ const Banner = () => {
           preload='auto'
           className='absolute inset-0 w-full h-full object-cover'
         ></video>
-        <div className='absolute inset-0 bg-white/40'></div>
+        <div className='absolute inset-0 bg-white/46'></div>
       </div>
 
       <div
         className={`text-center z-10 my-[200px] transition-opacity duration-4500 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
       >
-        <p className='mb-9 font-sans text-xs font-medium uppercase tracking-[4px] text-[#502b13]'>
+        <p className='mb-9 font-sans text-base font-medium uppercase tracking-[4px] text-[#502b13]'>
           Vamos nos casar
         </p>
-        <h1 className='font-banner font-regular leading-none text-[#502b13] text-[clamp(48px,9vw,92px)]'>
+        <h1 className='font-banner font-regular leading-none text-[#502b13] text-[73px]'>
           Carol
           <span className='ml-4 mr-9 inline-block font-normal italic text-[#C0714F]'>&amp;</span>
           Vitor
@@ -57,7 +57,7 @@ const Banner = () => {
           <span className='text-[#ff8c5a] text-lg drop-shadow-md'>✦</span>
           <span className='h-px w-12 md:w-20 bg-[#ff8c5a]'></span>
         </div>
-        <p className='mt-5 text-xs font-bold uppercase tracking-[4px] text-[#502b13]'>
+        <p className='mt-5 text-base font-bold uppercase tracking-[4px] text-[#502b13]'>
           23 de Janeiro de 2027
         </p>
       </div>
