@@ -90,7 +90,7 @@ const Story = () => {
                   <img
                     src={momento.imagem}
                     alt={momento.alt}
-                    className='aspect-[4/3] w-full object-cover'
+                    className='block h-auto w-full'
                   />
                 </div>
               )}
