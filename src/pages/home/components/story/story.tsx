@@ -1,7 +1,12 @@
 /* ----------------------------------------------------------------
    Edite aqui os marcos da nossa história.
    ---------------------------------------------------------------- */
-import { ImageCasamento, ImageMorarJunto, ImageNoivado } from '../../../../assets/images';
+import {
+  ImagePrimeiroEncontro,
+  ImageCasamento,
+  ImageMorarJunto,
+  ImageNoivado,
+} from '../../../../assets/images';
 
 const MOMENTOS: { ano: string; titulo: string; descricao: string; imagem?: string; alt?: string }[] = [
   {
@@ -9,14 +14,14 @@ const MOMENTOS: { ano: string; titulo: string; descricao: string; imagem?: strin
     titulo: 'O primeiro encontro',
     descricao:
       'O destino cruzou nossos caminhos no momento mais improvável, trazendo amor e esperança em plena pandemia.',
-    imagem: ImageCasamento,
+    imagem: ImagePrimeiroEncontro,
     alt: 'Carol e Vitor celebrando o casamento',
   },
   {
     ano: '2023',
     titulo: 'Nosso novo lar',
     descricao:
-      'Demos um novo e lindo passo: escolhemos começar a escrever a história da nossa família no nosso cantinho em Santo André.',
+      'Demos um novo e lindo passo: escolhemos nosso cantinho em Santo André para começar a história da nossa família',
     imagem: ImageMorarJunto,
     alt: 'Carol e Vitor celebrando o novo lar',
   },
