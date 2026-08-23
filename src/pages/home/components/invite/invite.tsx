@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { InviteVideoMobile } from '../../../../assets';
+import { InviteVideoDesktop, InviteVideoMobile } from '../../../../assets';
 import { useInviteStore } from '../../../../store/useInvite';
+import { useIsMobile } from '../../../../hooks/useIsMobile';
 
 const Invite = () => {
+  const isMobile = useIsMobile();
   const { audioRef, setShowInviteScreem } = useInviteStore();
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -34,15 +36,27 @@ const Invite = () => {
 
   return (
     <div className='fixed inset-0 z-50 w-screen h-screen bg-black' onClick={handleStart}>
-      <video
-        ref={videoRef}
-        src={InviteVideoMobile}
-        muted
-        playsInline
-        preload='auto'
-        onEnded={handleVideoEnded}
-        className='absolute inset-0 w-full h-full object-cover'
-      ></video>
+      {isMobile ? (
+        <video
+          ref={videoRef}
+          src={InviteVideoMobile}
+          muted
+          playsInline
+          preload='auto'
+          onEnded={handleVideoEnded}
+          className='absolute inset-0 w-full h-full object-cover'
+        ></video>
+      ) : (
+        <video
+          ref={videoRef}
+          src={InviteVideoDesktop}
+          muted
+          playsInline
+          preload='auto'
+          onEnded={handleVideoEnded}
+          className='absolute inset-0 w-full h-full object-cover'
+        ></video>
+      )}
     </div>
   );
 };

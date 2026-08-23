@@ -3,43 +3,34 @@
    ---------------------------------------------------------------- */
 const MOMENTOS: { ano: string; titulo: string; descricao: string }[] = [
   {
-    ano: '2019',
-    titulo: 'Como nos conhecemos',
-    descricao:
-      'O destino cruzou os nossos caminhos quando menos esperávamos, e desde aquele primeiro olhar tudo começou a fazer sentido.',
-  },
-  {
     ano: '2020',
     titulo: 'O primeiro encontro',
     descricao:
-      'Uma conversa que parecia não ter fim, risadas e a certeza de que aquele seria o início de algo especial.',
+      'O destino cruzou nossos caminhos no momento mais improvável, trazendo amor e esperança em plena pandemia.',
   },
   {
-    ano: '2021',
-    titulo: 'Pedido de namoro',
+    ano: '2023',
+    titulo: 'Nosso novo lar',
     descricao:
-      'Decidimos transformar a amizade em amor e seguir lado a lado, construindo memórias inesquecíveis.',
+      'Demos um novo e lindo passo: escolhemos começar a escrever a história da nossa família no nosso cantinho em Santo André.',
   },
   {
-    ano: '2024',
-    titulo: 'O noivado',
+    ano: '2025',
+    titulo: 'O noivado em Paris',
     descricao:
-      'Entre lágrimas de alegria e um sim cheio de emoção, selamos a promessa de passar a vida juntos.',
+      'Um sonho inesquecível! Sob o céu de Paris, com muitas lágrimas de alegria e um "sim" emocionado, prometemos um ao outro uma vida inteira juntos.',
   },
   {
-    ano: '2026',
+    ano: '2027',
     titulo: 'O grande dia',
     descricao:
-      'E agora chegou a hora de celebrar o nosso amor ao lado de quem mais amamos. O nosso para sempre começa aqui.',
+      'E agora chegou a hora de celebrar o nosso amor ao lado de quem mais amamos. O nosso "para sempre" começa aqui.',
   },
 ];
 
 const Story = () => {
   return (
-    <section
-      aria-label='Nossa história'
-      className='border-t border-line bg-sand px-6 py-16 sm:py-20'
-    >
+    <section aria-label='Nossa história' className='border-t border-line bg-sand px-6 py-16 sm:py-20'>
       <div className='text-center'>
         <p className='mb-4 font-sans text-xs font-medium uppercase tracking-[4px] text-accent'>
           Nossa História
@@ -63,9 +54,7 @@ const Story = () => {
             <li
               key={momento.ano}
               className={`relative mb-10 pl-12 last:mb-0 sm:w-1/2 sm:pl-0 ${
-                ladoEsquerdo
-                  ? 'sm:pr-12 sm:text-right'
-                  : 'sm:ml-auto sm:pl-12 sm:text-left'
+                ladoEsquerdo ? 'sm:pr-12 sm:text-right' : 'sm:ml-auto sm:pl-12 sm:text-left'
               }`}
             >
               {/* Ponto na linha */}
@@ -80,12 +69,8 @@ const Story = () => {
                 <span className='font-sans text-xs font-medium uppercase tracking-[3px] text-accent'>
                   {momento.ano}
                 </span>
-                <h3 className='mt-1 font-heading text-[24px] leading-tight text-ink'>
-                  {momento.titulo}
-                </h3>
-                <p className='mt-2 text-pretty text-[15px] leading-relaxed text-body'>
-                  {momento.descricao}
-                </p>
+                <h3 className='mt-1 font-heading text-[24px] leading-tight text-ink'>{momento.titulo}</h3>
+                <p className='mt-2 text-pretty text-[15px] leading-relaxed text-body'>{momento.descricao}</p>
               </div>
             </li>
           );

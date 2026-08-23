@@ -64,7 +64,7 @@ const Timer = () => {
         Contagem Regressiva
       </p>
       <h2 className='font-heading font-medium tracking-tight text-ink text-[clamp(30px,5vw,46px)]'>
-        Faltam poucos momentos
+        Faltam poucos dias
       </h2>
       <p className='mx-auto mt-3 max-w-[440px] text-[15px] text-muted'>
         Estamos contando os segundos para celebrar este dia ao seu lado.

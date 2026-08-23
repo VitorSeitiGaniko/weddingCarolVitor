@@ -47,7 +47,7 @@ const Banner = () => {
         <p className='mb-9 font-sans text-base font-medium uppercase tracking-[4px] text-[#502b13]'>
           Vamos nos casar
         </p>
-        <h1 className='font-banner font-regular leading-none text-[#502b13] text-[73px]'>
+        <h1 className='font-banner font-regular leading-none text-[#502b13] text-[64px] md:text-[74px]'>
           Carol
           <span className='ml-4 mr-9 inline-block font-normal italic text-[#C0714F]'>&amp;</span>
           Vitor
