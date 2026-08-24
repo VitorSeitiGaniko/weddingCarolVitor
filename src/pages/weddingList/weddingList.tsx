@@ -1,6 +1,6 @@
 import { ProductCard } from './components/productCard';
 import { listaPresentesCasamento } from '../../models/weddingList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Badge, IconButton } from '@mui/material';
 import { Header } from '../../components';
@@ -8,10 +8,15 @@ import { Cart } from './components/cart';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useStoreCart } from '../../store/useStoreCart';
+import { scrollToTop } from '../../utils/scroll';
 
 const WeddingList = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cart } = useStoreCart();
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <main className='flex flex-col'>
