@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import { ProductCard } from './components/productCard';
 import { listaPresentesCasamento } from '../../models/weddingList';
 import { useState, useEffect } from 'react';
@@ -38,7 +40,9 @@ const WeddingList = () => {
         </Badge>
       </IconButton>
 
-      <Header />
+      <NavLink to={'/'} className='inline-block'>
+        <Header />
+      </NavLink>
 
       <section className='mb-14'>
         <div className='mx-auto flex items-center justify-center gap-3.5 text-muted'>
@@ -50,7 +54,7 @@ const WeddingList = () => {
         </div>
 
         <p className='mx-auto mt-7 max-w-[560px] text-center text-pretty text-[17px] leading-relaxed text-body'>
-          Sua presenca ja e o nosso maior presente. Mas se quiser fazer parte do comeco da nossa nova vida
+          Sua presença já é o nosso maior presente. Mas se quiser fazer parte do começo da nossa nova vida
           juntos, escolha com carinho um mimo para o nosso lar.
         </p>
       </section>
