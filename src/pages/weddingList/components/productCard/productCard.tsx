@@ -42,6 +42,7 @@ const ProductCard = ({
         <img
           src={image}
           alt={title}
+          aria-hidden='true'
           loading='lazy'
           className='h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105'
         />
@@ -57,13 +58,9 @@ const ProductCard = ({
         <p className='flex-1 text-sm leading-relaxed text-body'>{description}</p>
 
         <div className='mt-3.5 flex items-center justify-between gap-3'>
-          <div className='flex flex-col leading-tight' aria-label={`Valor: ${formattedPrice}`}>
-            <span aria-hidden='true' className='mb-0.5 text-[10px] uppercase tracking-[2px] text-muted'>
-              Valor
-            </span>
-            <span aria-hidden='true' className='font-heading text-2xl font-semibold text-ink'>
-              {formattedPrice}
-            </span>
+          <div className='flex flex-col leading-tight'>
+            <span className='mb-0.5 text-[12px] uppercase tracking-[2px] text-muted'>Valor</span>
+            <span className='font-heading text-2xl font-semibold text-ink'>{formattedPrice}</span>
           </div>
 
           <button
