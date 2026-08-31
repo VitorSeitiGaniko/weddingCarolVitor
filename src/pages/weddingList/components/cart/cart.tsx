@@ -35,7 +35,12 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
   };
 
   return (
-    <Drawer anchor='right' open={isCartOpen} onClose={() => setIsCartOpen(false)}>
+    <Drawer
+      anchor='right'
+      open={isCartOpen}
+      onClose={() => setIsCartOpen(false)}
+      slotProps={{ paper: { component: 'section', 'aria-labelledby': 'cart-heading' } as object }}
+    >
       <Box sx={{ width: { xs: 320, sm: 380 }, p: 3 }}>
         <Box
           sx={{
@@ -45,16 +50,18 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
             mb: 2,
           }}
         >
-          <h3 style={{ fontWeight: 600 }}>Carrinho</h3>
+          <h3 id='cart-heading' style={{ fontWeight: 600 }}>
+            Carrinho
+          </h3>
 
-          <IconButton onClick={() => setIsCartOpen(false)}>
+          <IconButton onClick={() => setIsCartOpen(false)} aria-label='Fechar carrinho'>
             <CloseIcon />
           </IconButton>
         </Box>
 
         {cart.length === 0 ? (
           <Box sx={{ textAlign: 'center', mt: 5 }}>
-            <RemoveShoppingCartIcon sx={{ fontSize: 60, color: '#ccc', mb: 2 }} />
+            <RemoveShoppingCartIcon aria-hidden='true' sx={{ fontSize: 60, color: '#ccc', mb: 2 }} />
             <p style={{ fontSize: '18px', color: '#666' }}>Seu carrinho está vazio</p>
           </Box>
         ) : (
@@ -66,11 +73,14 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
                 {cart.map((item) => (
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }} key={item.id}>
                     <Box>
-                      <h3 style={{ fontWeight: 600 }}>{item.title}</h3>
-                      <h3>R$ {item.unit_price.toFixed(2)}</h3>
+                      <p style={{ fontWeight: 600 }}>{item.title}</p>
+                      <p>R$ {item.unit_price.toFixed(2)}</p>
                     </Box>
 
-                    <IconButton onClick={() => removeFromCart(item.id)}>
+                    <IconButton
+                      onClick={() => removeFromCart(item.id)}
+                      aria-label={`Remover ${item.title} do carrinho`}
+                    >
                       <DeleteIcon />
                     </IconButton>
                   </Box>
@@ -79,7 +89,7 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
 
               <Divider sx={{ my: 2 }} />
 
-              <h3 style={{ fontWeight: 700, marginBottom: '16px' }}>Total: R$ {total}</h3>
+              <p style={{ fontWeight: 700, marginBottom: '16px' }}>Total: R$ {total}</p>
 
               <Button onClick={handleSubmitOrder} fullWidth variant='contained'>
                 Finalizar
