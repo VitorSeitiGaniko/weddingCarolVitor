@@ -1,11 +1,12 @@
 import type { StoreCartItemMercadoPago } from '../utils/interface';
+import { API_BASE_URL } from '../utils/constants';
 
 interface PreferenceProps {
   items: Array<StoreCartItemMercadoPago>;
 }
 
 export const createPreference = async (items: PreferenceProps) => {
-  const response = await fetch('/api/create-preference', {
+  const response = await fetch(`${API_BASE_URL}/api/create-preference`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(items),
@@ -14,11 +15,4 @@ export const createPreference = async (items: PreferenceProps) => {
   const data = await response.json();
   console.log('URLs  ==> ', data);
   return data.initPoint;
-};
-
-export const getPaymentStatus = async (paymentId: string) => {
-  const response = await fetch(`/api/get-payment-status?payment_id=${encodeURIComponent(paymentId)}`);
-
-  const data = await response.json();
-  return data;
 };
