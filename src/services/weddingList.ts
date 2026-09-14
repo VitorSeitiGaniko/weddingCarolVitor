@@ -12,6 +12,13 @@ export const createPreference = async (items: PreferenceProps) => {
   });
 
   const data = await response.json();
-  console.log('initPoint:', data);
-  return data.sandbox_init_point;
+  console.log('URLs  ==> ', data);
+  return data.initPoint;
+};
+
+export const getPaymentStatus = async (paymentId: string) => {
+  const response = await fetch(`/api/get-payment-status?payment_id=${encodeURIComponent(paymentId)}`);
+
+  const data = await response.json();
+  return data;
 };

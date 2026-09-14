@@ -2,10 +2,12 @@ import { Box, Button, Divider, Drawer, IconButton } from '@mui/material';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { getPaymentStatus } from '../../../../services/weddingList';
 
 import { useStoreCart } from '../../../../store/useStoreCart';
 import { useMemo } from 'react';
 import { createPreference } from '../../../../services/weddingList';
+import { openLinkInNewTab } from '../../../../utils/openLink';
 
 interface CartProps {
   isCartOpen: boolean;
@@ -20,18 +22,26 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
     [cart],
   );
 
-  const handleSubmitOrder = () => {
+  const handleSubmitOrder = async () => {
+    //TODO: Implement order submission to Mercado Pago
     //createPreference({ items: cart });
-    createPreference({
+    const mercadoPagoResponse = await createPreference({
       items: [
         {
-          title: 'Presente de Casamento - carol panela',
+          title: 'Presente de Casamento - Vitor e Carol',
           quantity: 1,
-          unit_price: 300, // valor em BRL
+          unit_price: total,
           currency_id: 'BRL',
         },
       ],
     });
+
+    openLinkInNewTab(mercadoPagoResponse);
+  };
+
+  const getPaymentStatusTest = async (paymentId: string) => {
+    const response = await getPaymentStatus(paymentId);
+    console.log('Payment Status:', response);
   };
 
   return (
@@ -93,6 +103,14 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
 
               <Button onClick={handleSubmitOrder} fullWidth variant='contained'>
                 Finalizar
+              </Button>
+
+              <Button
+                onClick={() => getPaymentStatusTest('3449229614-e075e32f-4058-451c-8c34-6c3efb958550')}
+                fullWidth
+                variant='contained'
+              >
+                Status
               </Button>
             </>
           </>
