@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home, WeddingList } from './pages';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Home, WeddingList, PaymentSuccess, PaymentFailure, PaymentPending } from './pages';
 
 function AppContent() {
   return (
@@ -7,6 +7,10 @@ function AppContent() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='wedding-list' element={<WeddingList />} />
+        <Route path='sucesso' element={<PaymentSuccess />} />
+        <Route path='falha' element={<PaymentFailure />} />
+        <Route path='pendente' element={<PaymentPending />} />
+        <Route path='paymentPending' element={<Navigate to='/pendente' replace />} />
       </Routes>
     </>
   );

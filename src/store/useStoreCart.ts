@@ -5,6 +5,7 @@ interface StoreCartState {
   cart: Array<StoreCartItem>;
   addToCart: (item: StoreCartItem) => void;
   removeFromCart: (itemId: string) => void;
+  clearCart: () => void;
 }
 
 export const useStoreCart = create<StoreCartState>((set) => ({
@@ -12,4 +13,6 @@ export const useStoreCart = create<StoreCartState>((set) => ({
   addToCart: (item: StoreCartItem) => set((state) => ({ cart: [...state.cart, item] })),
   removeFromCart: (itemId: string) =>
     set((state) => ({ cart: state.cart.filter((item) => item.id !== itemId) })),
+  clearCart: () => set({ cart: [] }),
 }));
+
