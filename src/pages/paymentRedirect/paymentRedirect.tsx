@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { NavLink, useLocation, useSearchParams } from 'react-router-dom';
 
 import OpenInNewRoundedIcon from '@mui/icons-material/OpenInNewRounded';
