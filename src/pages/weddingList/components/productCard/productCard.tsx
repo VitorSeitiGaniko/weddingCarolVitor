@@ -9,6 +9,7 @@ interface ProductCardProps {
   quantity: number;
   currency_id: 'BRL';
   available: boolean;
+  setIsCartOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ProductCard = ({
@@ -20,6 +21,7 @@ const ProductCard = ({
   quantity,
   currency_id,
   available,
+  setIsCartOpen,
 }: ProductCardProps) => {
   const { addToCart } = useStoreCart();
 
@@ -30,6 +32,7 @@ const ProductCard = ({
 
   const handleAddCart = () => {
     addToCart({ id, image, title, description, unit_price, quantity, currency_id, available });
+    setIsCartOpen(true);
     console.log('CART ==> ', useStoreCart.getState().cart);
   };
 

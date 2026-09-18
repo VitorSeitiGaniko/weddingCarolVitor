@@ -3,10 +3,9 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+import { useNavigate } from 'react-router-dom';
 import { useStoreCart } from '../../../../store/useStoreCart';
 import { useMemo } from 'react';
-import { createPreference } from '../../../../services/weddingList';
-import { openLinkInNewTab } from '../../../../utils/openLink';
 
 interface CartProps {
   isCartOpen: boolean;
@@ -14,6 +13,7 @@ interface CartProps {
 }
 
 const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
+  const navigate = useNavigate();
   const { cart, removeFromCart } = useStoreCart();
 
   const total = useMemo(
@@ -21,22 +21,13 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
     [cart],
   );
 
-  const handleSubmitOrder = async () => {
-    //TODO: Implement order submission to Mercado Pago
-    //createPreference({ items: cart });
-    const mercadoPagoResponse = await createPreference({
-      items: [
-        {
-          title: 'Presente de Casamento - Vitor e Carol',
-          quantity: 1,
-          unit_price: total,
-          currency_id: 'BRL',
-        },
-      ],
-    });
 
-    openLinkInNewTab(mercadoPagoResponse);
+  const handleGoToCheckout = () => {
+    if (cart.length === 0) return;
+    setIsCartOpen(false);
+    navigate('/wedding-list/checkout');
   };
+
 
   return (
     <Drawer
@@ -93,16 +84,32 @@ const Cart = ({ isCartOpen, setIsCartOpen }: CartProps) => {
 
               <Divider sx={{ my: 2 }} />
 
-              <p style={{ fontWeight: 700, marginBottom: '16px' }}>Total: R$ {total}</p>
+              <p style={{ fontWeight: 700, marginBottom: '16px', fontSize: '18px' }}>
+                Total: R$ {total.toFixed(2)}
+              </p>
 
-              <Button onClick={handleSubmitOrder} fullWidth variant='contained'>
-                Finalizar
+              <Button
+                onClick={handleGoToCheckout}
+                fullWidth
+                variant='contained'
+                sx={{
+                  backgroundColor: 'var(--color-accent)',
+                  color: 'var(--color-cream)',
+                  py: 1.5,
+                  borderRadius: '12px',
+                  fontWeight: 600,
+                  textTransform: 'none',
+                  fontSize: '16px',
+                  '&:hover': {
+                    backgroundColor: 'var(--color-accent-deep)',
+                  },
+                }}
+              >
+                Finalizar Pedido
               </Button>
 
-              <Button onClick={() => {}} fullWidth variant='contained'>
-                Status
-              </Button>
             </>
+
           </>
         )}
       </Box>

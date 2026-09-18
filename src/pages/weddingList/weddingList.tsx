@@ -92,6 +92,7 @@ const WeddingList = () => {
                   quantity={1}
                   currency_id={'BRL'}
                   available={product.available}
+                  setIsCartOpen={setIsCartOpen}
                 />
               ),
           )}

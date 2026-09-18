@@ -81,8 +81,7 @@ const PaymentSuccess = () => {
           </h2>
 
           <p className='text-body text-base sm:text-[17px] leading-relaxed max-w-lg mx-auto mb-8'>
-            Seu presente de casamento foi confirmado com sucesso. Sua bênção e carinho tornam o nosso
-            começo ainda mais especial.
+            Seu presente de casamento foi confirmado com sucesso.
           </p>
 
           {/* Transaction Info Box */}

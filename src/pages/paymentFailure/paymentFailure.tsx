@@ -43,7 +43,8 @@ const PaymentFailure = () => {
           </h2>
 
           <p className='text-body text-base sm:text-[17px] leading-relaxed max-w-lg mx-auto mb-8'>
-            Não conseguimos processar o seu pagamento. Nenhuma cobrança foi efetuada ou os dados não puderam ser validados pela operadora.
+            Não conseguimos processar o seu pagamento. Nenhuma cobrança foi efetuada ou os dados não puderam
+            ser validados pela operadora.
           </p>
 
           {/* Tips Box */}

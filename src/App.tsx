@@ -1,5 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Home, WeddingList, PaymentSuccess, PaymentFailure, PaymentPending } from './pages';
+import {
+  Home,
+  WeddingList,
+  PaymentSuccess,
+  PaymentFailure,
+  PaymentPending,
+  PaymentRedirect,
+  Checkout,
+} from './pages';
 
 function AppContent() {
   return (
@@ -7,10 +15,11 @@ function AppContent() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='wedding-list' element={<WeddingList />} />
-        <Route path='sucesso' element={<PaymentSuccess />} />
-        <Route path='falha' element={<PaymentFailure />} />
-        <Route path='pendente' element={<PaymentPending />} />
-        <Route path='paymentPending' element={<Navigate to='/pendente' replace />} />
+        <Route path='wedding-list/checkout' element={<Checkout />} />
+        <Route path='wedding-list/redirect' element={<PaymentRedirect />} />
+        <Route path='wedding-list/success' element={<PaymentSuccess />} />
+        <Route path='wedding-list/failure' element={<PaymentFailure />} />
+        <Route path='wedding-list/pending' element={<PaymentPending />} />
       </Routes>
     </>
   );

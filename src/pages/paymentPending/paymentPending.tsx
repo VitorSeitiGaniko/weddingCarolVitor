@@ -72,7 +72,8 @@ const PaymentPending = () => {
           </h2>
 
           <p className='text-body text-base sm:text-[17px] leading-relaxed max-w-lg mx-auto mb-8'>
-            Estamos aguardando a confirmação da instituição financeira. Assim que for compensado, o status será atualizado automaticamente.
+            Estamos aguardando a confirmação da instituição financeira. Assim que for compensado, o status
+            será atualizado automaticamente.
           </p>
 
           {/* Transaction Info Box if available */}
@@ -108,8 +109,9 @@ const PaymentPending = () => {
             </div>
 
             <ul className='space-y-2 text-body list-disc list-inside'>
-              <li><strong>Pix:</strong> confirmação geralmente em poucos minutos.</li>
-              <li><strong>Boleto bancário:</strong> compensação em até 1 a 2 dias úteis.</li>
+              <li>
+                <strong>Pix:</strong> confirmação geralmente em poucos minutos.
+              </li>
               <li>Você receberá atualizações e recibo no e-mail informado no pagamento.</li>
             </ul>
           </div>
