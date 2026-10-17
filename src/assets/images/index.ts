@@ -18,6 +18,12 @@ import ImageGiftSofa from './gift_sofa.webp';
 import ImageGiftSpa from './gift_spa.avif';
 import ImageGiftVip from './gift_vip.jfif';
 import ImageGiftWashingMachine from './gift_washing_machine.avif';
+import ImageGiftDance from './gift_dance.jfif';
+import ImageGiftDecoration from './gift_decoration.jpeg';
+import ImageGiftDj from './gift_dj.webp';
+import ImageDrinks from './gift_drinks.png';
+import ImageGiftResort from './gift_resort.jpg';
+import ImageGiftPhoto from './gift_photo.jfif';
 
 export {
   ImagePrimeiroEncontro,
@@ -40,4 +46,10 @@ export {
   ImageGiftDishwasher,
   ImageGiftFood,
   ImageGiftGta,
+  ImageGiftDance,
+  ImageGiftDecoration,
+  ImageGiftDj,
+  ImageDrinks,
+  ImageGiftResort,
+  ImageGiftPhoto,
 };
