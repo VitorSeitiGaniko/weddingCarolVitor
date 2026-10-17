@@ -5,9 +5,8 @@ export const WEDDING_LIST = 'wedding-list';
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '';
 
 export const PIX_CONFIG = {
-  key: import.meta.env.VITE_PIX_KEY || 'presentes.carolevitor@gmail.com',
+  key: import.meta.env.VITE_PIX_KEY || 'vitorseitiganiko@gmail.com',
   keyType: 'Chave Pix (E-mail)',
-  receiverName: 'Carolina & Vitor',
+  receiverName: 'Vitor Seiti Ganiko',
   bankName: 'Mercado Pago / Banco',
 };
-
