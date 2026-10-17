@@ -70,7 +70,7 @@ const ProductCard = ({
             onClick={handleAddCart}
             type='button'
             aria-label={`Presentear com ${title}`}
-            className='cursor-pointer whitespace-nowrap rounded-full bg-accent px-[18px] py-2.5 font-sans text-[13px] font-medium tracking-wide text-white transition-colors duration-200 hover:bg-accent-deep active:scale-95'
+            className='cursor-pointer whitespace-nowrap rounded-full bg-accent px-[28px] py-2.5 font-sans text-[14px] font-medium tracking-wide text-white transition-colors duration-200 hover:bg-accent-deep active:scale-95'
           >
             Presentear
           </button>

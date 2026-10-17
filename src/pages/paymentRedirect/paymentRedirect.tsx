@@ -92,8 +92,8 @@ const PaymentRedirect = () => {
 
           {/* Action Box when popup might be blocked */}
           <div className='mb-8 text-center bg-sand/40 border border-line rounded-2xl p-6'>
-            <p className='text-sm text-ink font-medium mb-3'>A nova aba não abriu automaticamente?</p>
-            <p className='text-xs text-muted mb-4 max-w-md mx-auto'>
+            <p className='text-base text-ink font-medium mb-3'>A nova aba não abriu automaticamente?</p>
+            <p className='text-sm text-muted mb-4 max-w-md mx-auto'>
               Alguns navegadores bloqueiam abas automáticas. Clique no botão abaixo para ir direto à página de
               pagamento:
             </p>
@@ -102,7 +102,7 @@ const PaymentRedirect = () => {
               <button
                 type='button'
                 onClick={handleManualOpen}
-                className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-accent hover:bg-accent-deep text-cream font-medium text-sm transition-all duration-200 shadow-soft hover:shadow-md cursor-pointer'
+                className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-accent hover:bg-accent-deep text-cream font-medium text-base transition-all duration-200 shadow-soft hover:shadow-md cursor-pointer'
               >
                 <span>Acessar Mercado Pago</span>
                 <OpenInNewRoundedIcon sx={{ fontSize: 18 }} />

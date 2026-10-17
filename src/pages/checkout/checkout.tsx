@@ -376,7 +376,7 @@ const Checkout = () => {
               <div className='mt-4 text-center'>
                 <NavLink
                   to='/wedding-list'
-                  className='text-xs text-muted hover:text-ink underline transition-colors'
+                  className='text-base text-muted hover:text-ink underline transition-colors'
                 >
                   Alterar itens da lista
                 </NavLink>

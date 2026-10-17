@@ -77,7 +77,7 @@ const WeddingList = () => {
 
         <section
           aria-label='Lista de presentes'
-          className='grid grid-cols-1 gap-5 px-5 pb-14 pt-7 sm:grid-cols-2 sm:gap-5 sm:px-7 lg:grid-cols-3 lg:gap-6 lg:px-7 xl:grid-cols-4 xl:gap-7 xl:px-8 xl:pb-20'
+          className='grid grid-cols-1 gap-5 px-5 pb-14 pt-7 sm:grid-cols-2 sm:gap-5 sm:px-7 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-14 lg:px-7 xl:grid-cols-4 xl:gap-x-8 xl:gap-y-18 xl:px-8 xl:pb-20'
         >
           {listaPresentesCasamento.map(
             (product) =>
