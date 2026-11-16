@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { RecantoReal, BannerMusic } from '../../../../assets';
-import { VolumeUp, VolumeOff } from '@mui/icons-material';
+import { VolumeUp, VolumeOff, KeyboardArrowDown } from '@mui/icons-material';
 import { useInviteStore } from '../../../../store/useInvite';
 
 const Banner = () => {
@@ -15,10 +15,29 @@ const Banner = () => {
     }
   };
 
+  const handleScrollDown = () => {
+    window.scrollBy({
+      top: window.innerHeight * 0.5,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section
       className={`relative min-h-screen flex flex-col items-center justify-center py-8 px-6 overflow-hidden bg-background transition-opacity duration-4000 ease-in-out ${!showInviteScreem ? 'opacity-100' : 'opacity-0'}`}
     >
+      {/* Botão de indicação de scroll (canto inferior esquerdo) */}
+      <button
+        onClick={handleScrollDown}
+        aria-label='Rolar para baixo'
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-white/80 hover:bg-white text-[#3d4c2f] rounded-full p-2 shadow-md cursor-pointer transition-opacity duration-1000 ease-in-out animate-bounce ${
+          !showInviteScreem ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <KeyboardArrowDown fontSize='medium' />
+      </button>
+
+      {/* Botão de som (canto inferior direito) */}
       <button
         onClick={handleToggleMute}
         className='fixed bottom-6 right-6 z-50 bg-white/80 hover:bg-white rounded-full p-2 shadow-md cursor-pointer'
